@@ -1,3 +1,8 @@
+:root{
+    --blackColor: rgb(25, 28, 31);
+    --greyColor: rgb(146, 159, 165);
+    --yellowColor: rgb(235, 200, 12);
+}
 .small-input {
     width: 40vw !important; /* Largeur de l'input */
 }
@@ -82,3 +87,49 @@ svg {
     background-color: #1b6392 !important;
     color: white !important;
 }
+
+footer{
+    background-color: var(--blackColor);
+    color: var(--greyColor);
+    font-size: 11px;
+} 
+footer h3:not(footer > div > ul > li:nth-child(1) > h3){
+    font-weight: 350;
+}
+footer > div > ul > li:nth-child(2) a,
+footer > div > ul > li:nth-child(3) a{
+    color: var(--greyColor);
+}
+footer > div > ul > li:nth-child(2) a:hover,
+footer > div > ul > li:nth-child(3) a:hover,
+footer > div > ul > li:nth-child(2) > ul > li:last-child > a{
+    color: var(--yellowColor);
+}
+footer > div > ul > li:last-child button{
+    background-color: var(--blackColor);
+    border: 1.5px solid rgb(48, 54, 57);
+    margin: 0px 5px 5px 0px;
+    border-radius: 2px;
+}
+footer > div > ul > li:last-child button:hover{
+    border: 1.5px solid white;
+    background-color: rgb(52, 52, 52);
+}
+.divider{
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--yellowColor);
+    border-radius: 2px;
+    margin-right: 5px;
+    position: relative;
+    bottom: 3px;
+}
+footer > div > ul > li:nth-child(4){
+    width: 150px;
+}
+footer > div > ul > li:nth-child(4) button{
+    background-color: rgb(48, 54, 57);
+    border-radius:2px;
+}
+
