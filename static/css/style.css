@@ -2,92 +2,55 @@
     --blackColor: rgb(25, 28, 31);
     --greyColor: rgb(146, 159, 165);
     --yellowColor: rgb(235, 200, 12);
+    --blueColor:#1b6392
 }
 .small-input {
     width: 40vw !important; /* Largeur de l'input */
 }
 
-svg {
-    width: 1.5vw !important;
+.dic{
+    font-size: 13px;
+}
+
+.rs {
+    width: 1vw !important;
     fill: white !important; /* Changer la couleur de remplissage des SVG en blanc */
-    margin-right: 10px;
 }
-
-
-.nav-content1 {
-    display: flex;
-    justify-content: space-between; /* Espacement égal entre les éléments */
-    color: white;
-    width: 90%; /* Largeur à 100% */
-    max-width: 100%; /* Largeur maximale */
-    padding: 0 20px; /* Ajouter un espacement horizontal */
-}
-
-.nav-content2 {
-    display: flex;
-    justify-content: space-between; /* Espacement égal entre les éléments */
-    color: white;
-    width: 90%; /* Largeur à 100% */
-    max-width: 90%; /* Largeur maximale */
-    margin-top: 1vh;
-    padding: 0 20px; /* Ajouter un espacement horizontal */
-    
-}
-.trait{
-    border-top: 1px solid white;
-    width: 100%;
+.panier{
+    width: 1.7vw !important;
+    fill: white !important; /* Changer la couleur de remplissage des SVG en blanc */
 }
 
 
 
 .div-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Alignement horizontal */
-    background-color: #1b6392;
-    padding-top: 1vw !important;
-    padding-bottom: 1vw !important;
+    background-color: var(--blueColor);
     
-}
-
-
-
-.div-svg{
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-around !important;
-    border-right: 1px solid white;
-
-}
-.div-svg span{
-    margin-right: 1.5vw !important;
     
-}
-.panier{
-    width: 2vw !important;
-}
-.langue{
-    margin-left: -170px !important;
-}
-
-/* Style du bouton du dropdown */
-.btn-secondary {
-    background-color: #1b6392 !important;
-    color: white !important;
-    border: none !important;
 }
 
 /* Style des liens du dropdown */
 .dropdown-item {
     color: #1b6392 !important;
+    font-size: 13px;
 }
 
 /* Changement de couleur au survol des liens */
 .dropdown-item:hover {
-    background-color: #1b6392 !important;
+    background-color: var(--blueColor) !important;
     color: white !important;
 }
-
+/* Style du bouton du dropdown */
+.btn-secondary {
+    background-color: var(--blueColor) !important;
+    color: white !important;
+    border: none !important;
+    
+    
+}
+.btn-small {
+    font-size: 13px !important; /* Taille de police personnalisée */
+}
 footer{
     background-color: var(--blackColor);
     color: var(--greyColor);
