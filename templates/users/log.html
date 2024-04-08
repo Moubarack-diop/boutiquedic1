@@ -5,64 +5,113 @@
 
 {% block content %}
 
-<!-- log.html -->
-<form method="post" class="form-horizontal">
-    {% csrf_token %}
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <form method="post" class="form-horizontal">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="id_prenom">Prénom:</label>
-                        <div class="col-sm-10">
-                            {{ form.prenom }}
-                        </div>
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row mb-3 mt-3 pt-4 justify-content-center align-items-center  ">
+        <div class="col-md-8 mr-4 ml-4 shadow-lg  div-but ">
+           
+            <!-- Boutons de connexion et d'inscription -->
+                <div class="d-flex justify-content-between pt-2 but-div border-bottom border-light-subtle " id="boutons">
+                    <button id="btnConnexion" class=" nowrap btn-haut w-100 active" onclick="afficherConnexion()">Se connecter</button>
+                    <button id="btnInscription" class="btn-haut w-100" onclick="afficherInscription()">S'inscrire</button>
+                </div>
+                
+            <!-- Formulaire de connexion -->
+            <form method="post" id="form-connexion" class="form-horizontal">
+                {% csrf_token %}
+                <!-- Champs de connexion -->
+                <div class="form-group">
+                    <label class="text-label control-label col-sm-2 nowrap m-0" for="id_email">Courriel:</label>
+                    <div class="col-sm-10 form-control-lg">
+                        {{ form.email }}
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="id_nom">Nom:</label>
-                        <div class="col-sm-10">
-                            {{ form.nom }}
-                        </div>
+                </div>
+                <div class="form-group">
+                    <label class="text-label control-label col-sm-2 text-nowrap m-0" for="id_mot_de_pass">Mot de passe:</label>
+                    <div class="col-sm-10 form-control-lg">
+                        {{ form.mot_de_pass }}
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="id_date_naissance">Date de naissance:</label>
-                        <div class="col-sm-10">
-                            {{ form.date_naissance }}
-                        </div>
+                </div>
+                
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary bouton-submit">Se connecter</button>
+                </div>
+            </form>
+            
+            <!-- Formulaire d'inscription -->
+            <form method="post" id="form-inscription" class="form-horizontal" style="display: none;">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="text-label control-label col-sm-2 m-0" for="id_prenom">Prénom:</label>
+                    <div class="col-sm-10 form-control-lg m-0">
+                        {{ form.prenom }}
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="id_email">Email:</label>
-                        <div class="col-sm-10">
-                            {{ form.email }}
-                        </div>
+                </div>
+                <div class="form-group">
+                    <label class="text-label control-label col-sm-2 m-0" for="id_nom">Nom:</label>
+                    <div class="col-sm-10 form-control-lg">
+                        {{ form.nom }}
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="id_mot_de_pass">Mot de passe:</label>
-                        <div class="col-sm-10">
-                            {{ form.mot_de_pass }}
-                        </div>
+                </div>
+                <div class="form-group">
+                    <label class="text-label control-label col-sm-2 text-nowrap m-0" for="id_date_naissance">Date de naissance:</label>
+                    <div class="col-sm-10 form-control-lg">
+                        {{ form.date_naissance }}
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="id_confirmer_mot_de_pass">Confirmer le mot de passe:</label>
-                        <div class="col-sm-10">
-                            {{ form.confirmer_mot_de_pass }}
-                        </div>
+                </div>
+                <div class="form-group">
+                    <label class="text-label control-label col-sm-2 nowrap m-0" for="id_email">Courriel:</label>
+                    <div class="col-sm-10 form-control-lg">
+                        {{ form.email }}
                     </div>
-                    <!-- Ajoutez d'autres champs de formulaire de la même manière -->
-                    
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-primary">S'inscrire</button>
-                        </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn bouton-submit btn-primary" onclick="afficherEtapeDeux()">SUIVANT <i class="fa-solid fa-arrow-right"></i> </button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
+            
+            <!-- Formulaire pour l'étape 2 -->
+            <form method="post" id="form-etape-2" class="form-horizontal" style="display: none;">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="text-label control-label col-sm-2 text-nowrap m-0" for="id_mot_de_pass">Mot de passe:</label>
+                    <div class="col-sm-10 form-control-lg">
+                        {{ form.mot_de_pass }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="text-label control-label col-sm-2 text-nowrap m-0" for="id_confirmer_mot_de_pass">Confirmer le mot de passe:</label>
+                    <div class="col-sm-10 form-control-lg">
+                        {{ form.confirmer_mot_de_pass }}
+                    </div>
+                </div>
+                <div class="accord">
+                    <div class="mr-2 ml-3">
+                        {{ form.accord }}
+                    </div>
+                    <div class='conditions'>Êtes-vous d'accord avec les conditions d'utilisation et la politique de confidentialité ?</div>
+                </div>
+                
+                <!-- Bouton pour revenir à l'étape précédente -->
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn bouton-submit btn-primary" onclick="afficherEtapeUn()"> <i class="fa-solid fa-arrow-left"></i> RETOUR  </button>
+                    </div>
+                </div>
+                
+                <!-- Bouton pour soumettre le formulaire complet -->
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn bouton-submit btn-primary">S'INSCRIRE <i class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-    
-</form>
-
+</div>
 
 
 {% endblock  %}
+

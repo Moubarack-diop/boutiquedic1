@@ -7,6 +7,7 @@ class UserModel(models.Model):
     email = models.EmailField(max_length=254)
     mot_de_pass = models.CharField(max_length=50)
     confirmer_mot_de_pass = models.CharField(max_length=50)
+    accord=models.BooleanField()
 
 
     def __str__(self):

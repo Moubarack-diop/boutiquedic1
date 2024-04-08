@@ -2,7 +2,8 @@
     --blackColor: rgb(25, 28, 31);
     --greyColor: rgb(146, 159, 165);
     --yellowColor: rgb(235, 200, 12);
-    --blueColor:#1b6392
+    --blueColor:#1b6392;
+    --orangeColor: rgba(250,130,50,255);
 }
 .small-input {
     width: 40vw !important; /* Largeur de l'input */
@@ -21,18 +22,33 @@
     fill: white !important; /* Changer la couleur de remplissage des SVG en blanc */
 }
 
+.text-label {
+    font-size: 12px !important; 
+    font-weight: bold !important;
+}
 
 
 .div-nav {
     background-color: var(--blueColor);
     
-    
 }
+
+.bouton-submit{
+    width: 19vw !important;
+    height: 8vh;
+    background-color: var(--orangeColor) !important;
+    border: none !important;
+    margin-bottom: 5vw !important;
+    margin-top:5vw !important;
+}
+
+
 
 /* Style des liens du dropdown */
 .dropdown-item {
     color: #1b6392 !important;
     font-size: 13px;
+
 }
 
 /* Changement de couleur au survol des liens */
@@ -51,6 +67,38 @@
 .btn-small {
     font-size: 13px !important; /* Taille de police personnalisée */
 }
+
+.btn-haut {
+    border: none !important;
+    background-color: transparent !important;
+    cursor: pointer !important;
+    color: grey !important;
+    border-bottom: grey !important;
+}
+
+.btn-haut.active {
+    border-bottom: 2px solid var(--orangeColor) !important; 
+    color: black !important;
+    font-weight: bold !important;
+    
+}
+
+.div-but{
+    width: 30vw !important;
+}
+.accord{
+    display: flex !important;
+    justify-content: space-between !important;
+}
+.conditions{
+    font-size: 12px !important;
+    color: var(--blueColor);
+}
+
+.btn-haut:focus {
+    outline: none !important;
+}
+
 footer{
     background-color: var(--blackColor);
     color: var(--greyColor);
