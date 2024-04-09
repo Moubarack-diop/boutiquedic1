@@ -2,6 +2,7 @@
     --blackColor: rgb(25, 28, 31);
     --greyColor: rgb(146, 159, 165);
     --yellowColor: rgb(235, 200, 12);
+    --orangeColor: rgb(250, 130, 50);
 }
 .small-input {
     width: 40vw !important; /* Largeur de l'input */
@@ -133,3 +134,22 @@ footer > div > ul > li:nth-child(4) button{
     border-radius:2px;
 }
 
+.checked{
+    color: var(--orangeColor);
+}
+input[type="radio"]:checked {
+    background-color: var(--orangeColor);
+    border-color: var(--orangeColor);
+    box-shadow:none;
+}
+.product-price span{
+    color: rgb(45, 165, 243);
+}
+.product-desc span{
+    font-size: .85rem;
+}
+.product-rate span{
+    font-size: 11px;
+    position: relative;
+    bottom: 3px;
+}
