@@ -21,4 +21,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.view_home, name="home-path"),
     path("produits/", include("Products.urls")),
+    path("categorie/<str:name>", views.view_category_list_products, name='categorie-path')
 ]

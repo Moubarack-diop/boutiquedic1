@@ -145,7 +145,7 @@ input[type="radio"]:checked {
 .product-price span{
     color: rgb(45, 165, 243);
 }
-.product-desc span{
+.product-desc a{
     font-size: .85rem;
 }
 .product-rate span{
