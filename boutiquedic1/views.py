@@ -10,7 +10,6 @@ def view_home(request):
 
 def view_category_list_products(request, name):
     name = name.replace('-', ' ')
-    print(name)
     categories = CategorieModel.objects.all()
     try:
         categorie = CategorieModel.objects.get(titre=name)

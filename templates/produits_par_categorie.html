@@ -9,7 +9,7 @@
                 <h3 class="fs-6">CATEGORIE DE PRODUITS</h3>
                 <div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <a href="{% url 'home-path' %}"><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></a>
                         <label class="form-check-label " for="flexRadioDefault1">
                         Tous les produits
                         </label>
@@ -17,9 +17,9 @@
                     {% for c in categories %}
                         <div class="form-check">
                             {% if  c.titre  ==  categorie.titre  %}
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked="checked">
+                            <a href="{% url 'categorie-path' c.titre %}"><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked="checked"></a>
                             {% else %}
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <a href="{% url 'categorie-path' c.titre %}"><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"></a>
                             {% endif %}
                             <label class="form-check-label " for="flexRadioDefault1">
                             {{ c.titre }}
@@ -33,7 +33,7 @@
                     <div class="product-cart col-md-3 mb-2">
                         <article class="me-2 px-3 border">
                             <div class="img-product d-flex justify-content-center  pb-1">
-                                <img src=" static{{ p.image.url }}" width="202" height="195" alt="">
+                                <img src="/static{{ p.image.url }}" width="202" height="195" alt="">
                             </div>
                             <div class="product-content">
                                 <div class="product-rate mb-1">
@@ -56,22 +56,23 @@
                         </article>
                     </div>
                 {% endfor %}
-                <div class="my-5 w-100 d-flex justify-content-center">
-                    <div>
-                        <ul class="pagination my-auto">
-                            <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle"><i class="fa-solid fa-arrow-left" style="color: #fa8232;"></i></a></li>
-                            <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle">01</a></li>
-                            <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle">02</a></li>
-                            <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle">03</a></li>
-                            <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle">04</a></li>
-                            <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle">05</a></li>
-                            <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle">06</a></li>
-                            <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle"><i class="fa-solid fa-arrow-right" style="color: #fa8232;"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+                
             </section>
-            
+            <div class="col-md-3"></div>
+            <div class="my-5 col-md-9 d-flex justify-content-center">
+                <div>
+                    <ul class="pagination my-auto">
+                        <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle"><i class="fa-solid fa-arrow-left" style="color: #fa8232;"></i></a></li>
+                        <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle">01</a></li>
+                        <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle">02</a></li>
+                        <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle">03</a></li>
+                        <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle">04</a></li>
+                        <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle">05</a></li>
+                        <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle">06</a></li>
+                        <li class="page-item mx-1"><a href="#" class="page-link btn rounded-circle"><i class="fa-solid fa-arrow-right" style="color: #fa8232;"></i></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>   
     </div>
 
