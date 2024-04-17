@@ -19,3 +19,9 @@ def view_category_list_products(request, name):
     except:
         #messages.error(request, ("Cette categorie n'existe pas"))
         return redirect('home-path')
+    
+def product_detail_view(request, name):
+    #name = name.replace('!', ' ')
+    produit = ProduitModel.objects.get(titre=name)
+    images = produit.images.all()
+    return render(request, "detail-produit.html", {'p':produit, 'images': images})

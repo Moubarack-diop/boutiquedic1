@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <section class="container pt-5">
+        <div class="row">
+            <div class="product-view col-md-6">
+                <div class="border">
+                    <img src="/static{{ p.image.url }}" alt="" width="616" height="464" class="img-fluid">
+                </div>
+                <div class="detail-gallery d-flex">
+                    {% for i in images %}
+                      <figure class="border d-flex align-items-center col-md-2">
+                        <div class="mx-2"><img src="/static{{ i.image.url }} " alt=""  class="img-fluid mw-100"></div>
+                      </figure>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="product-desc col-md-6 border border-danger">
+                <div class="product-detail1">
+                    <h3>{{ p.titre }}</h3>
+                    <div>
+                        <div>
+                            <span>Ref: {{ p.titre }}</span>
+                            <span>Marque: {{ p.titre }}</span>
+                        </div>
+                        <div>
+                            <span>Disponibilite: {{ p.titre }}</span>
+                            <span>Categorie: {{ p.categorie }}</span>
+                        </div>
+                    </div>
+                    <h3>{{ p.prix }}</h3>
+                </div>
+                <hr>
+                <div class="share-product row d-flex justify-content-center">
+                    <span>Partager le produit: </span>
+                    <div class="col-md-3">
+                        <i class="fa-sharp fa-regular fa-clone"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </div>
+                </div>
+                <div class="border ">
+                    <span class="d-table">Garantie a 100% Paiement securise</span>
+                    <img src="{% static 'img/Payment Method.png' %}" alt="" class="">
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+{% endblock  %}

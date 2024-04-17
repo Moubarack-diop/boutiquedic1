@@ -34,9 +34,13 @@ class ProduitModel(models.Model):
         return self.titre
     
 
-""" class ProduitImagesModel(models.Model):
-    images = models.ImageField(upload_to='produit-images', default="produit.png")
-    produit = models.ForeignKey(ProduitModel, on_delete=models.SET_NULL, null=True)
+class ProduitImagesModel(models.Model):
+    image = models.ImageField(upload_to='produit-images', default="produit.png")
+    produit = models.ForeignKey(ProduitModel, on_delete=models.SET_NULL, null=True, related_name="images")
+    date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name_plural = "Images produit" """
+        verbose_name_plural = "Images produit"
+    
+    def __str__(self) -> str:
+        return self.produit.titre
